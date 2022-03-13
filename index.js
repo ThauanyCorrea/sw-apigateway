@@ -1,13 +1,13 @@
 var http = require('http');
 const express = require('express')
-const httpProxy = require('express-http-proxy')
+const proxy = require('express-http-proxy')
 const app = express()
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const helmet = require('helmet');
 
-const projetosServiceProxy = httpProxy('https://sw-pessoas-api.herokuapp.com');
-const pessoasServiceProxy = httpProxy('https://sw-projetos-api.herokuapp.com');
+const projetosServiceProxy = proxy('https://sw-projetos-api.herokuapp.com');
+const pessoasServiceProxy = proxy('https://sw-pessoas-api.herokuapp.com');
 
 // Proxy request
 // rota para projetos e todos os métodos
